@@ -213,7 +213,7 @@ function LandingNav() {
         </div>
         <div className="flex items-center gap-3">
           <button
-            onClick={() => nav('/')}
+            onClick={() => nav('/login')}
             className="text-sm text-[#A7B3C2] hover:text-white transition-colors px-4 py-2"
           >
             Acceder al sistema
@@ -644,7 +644,7 @@ function CTASection() {
             Comenzar ahora <ArrowRight className="w-5 h-5" />
           </button>
           <button
-            onClick={() => nav('/')}
+            onClick={() => nav('/login')}
             className="flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-base transition-all duration-200 hover:bg-white/5"
             style={{ border: '1px solid rgba(249,128,88,0.3)', color: '#F98058' }}
           >

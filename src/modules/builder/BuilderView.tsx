@@ -247,7 +247,7 @@ export function BuilderView() {
               </div>
               <Tooltip content="Cambiar vertical">
                 <a
-                  href="/"
+                  href="/app"
                   className="p-1.5 rounded-md text-content-muted hover:text-white hover:bg-white/[0.06] transition-all"
                   title="Volver al dashboard para cambiar vertical"
                 >

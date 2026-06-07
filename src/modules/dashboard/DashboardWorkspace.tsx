@@ -115,7 +115,7 @@ function ProjectMiniCard({ project }: { project: BuilderProject }) {
   return (
     <GlassPanel
       className="overflow-hidden cursor-pointer hover:bg-white/[0.10] transition-all group"
-      onClick={() => navigate(`/projects/${project.id}`)}
+      onClick={() => navigate(`/app/projects/${project.id}`)}
     >
       <div className={cn('h-24 bg-gradient-to-br', gradient, 'relative')}>
         <div className="absolute inset-0 flex items-center justify-center">
@@ -148,7 +148,7 @@ export function DashboardWorkspace() {
   const handleStartVertical = (vertical: VerticalCard) => {
     // En produccion: crear proyecto con vertical_key en metadata
     // Por ahora navega al builder — en Fase 1 se creara el proyecto pre-configurado
-    navigate(`/builder?vertical=${vertical.key}`)
+    navigate(`/app/builder?vertical=${vertical.key}`)
   }
 
   return (
@@ -161,7 +161,7 @@ export function DashboardWorkspace() {
             Crea configuradores visuales para distintas industrias.
           </p>
         </div>
-        <Button variant="primary" icon={<Plus className="w-4 h-4" />} onClick={() => navigate('/builder')}>
+        <Button variant="primary" icon={<Plus className="w-4 h-4" />} onClick={() => navigate('/app/builder')}>
           Nuevo proyecto
         </Button>
       </div>
@@ -242,7 +242,7 @@ export function DashboardWorkspace() {
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-white text-sm font-questrial font-medium">Proyectos recientes</h2>
           <button
-            onClick={() => navigate('/projects')}
+            onClick={() => navigate('/app/projects')}
             className="text-content-secondary hover:text-alqia-orange text-xs flex items-center gap-1 transition-colors"
           >
             Ver todos <ArrowRight className="w-3 h-3" />

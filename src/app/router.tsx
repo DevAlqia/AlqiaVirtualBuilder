@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AppShell } from '@/components/layout/AppShell'
+import { ProtectedRoute } from '@/components/layout/ProtectedRoute'
 import { LandingPage } from '@/modules/landing/LandingPage'
+import { LoginPage } from '@/modules/auth/LoginPage'
 import { DashboardWorkspace } from '@/modules/dashboard/DashboardWorkspace'
 import { BuilderView } from '@/modules/builder/BuilderView'
 import { ProjectsList } from '@/modules/projects/ProjectsList'
@@ -13,30 +15,40 @@ import { SettingsView } from '@/modules/settings/SettingsView'
 import { ProjectPublicPreview } from '@/modules/public/ProjectPublicPreview'
 
 const router = createBrowserRouter([
-  // ── Landing pública ── (sin AppShell)
+  // Pagina de inicio (publica)
   {
-    path: '/landing',
+    path: '/',
     element: <LandingPage />,
   },
-  // ── Vista compartida de cliente ── (sin AppShell — acceso público sin login)
+  // Login (publico)
+  {
+    path: '/login',
+    element: <LoginPage />,
+  },
+  // Vista compartida de cliente (publica)
   {
     path: '/share/:shareToken',
     element: <ProjectPublicPreview />,
   },
-  // ── Aplicación ────────────────────────────────────────────────────────────
+  // Aplicacion protegida
   {
-    path: '/',
-    element: <AppShell />,
+    path: '/app',
+    element: <ProtectedRoute />,
     children: [
-      { index: true, element: <DashboardWorkspace /> },
-      { path: 'builder', element: <BuilderView /> },
-      { path: 'projects', element: <ProjectsList /> },
-      { path: 'projects/:id', element: <ProjectDetailView /> },
-      { path: 'catalog', element: <CatalogList /> },
-      { path: 'assets', element: <AssetsView /> },
-      { path: 'quotes', element: <QuoteRequestsList /> },
-      { path: 'analytics', element: <AnalyticsView /> },
-      { path: 'settings', element: <SettingsView /> },
+      {
+        element: <AppShell />,
+        children: [
+          { index: true, element: <DashboardWorkspace /> },
+          { path: 'builder', element: <BuilderView /> },
+          { path: 'projects', element: <ProjectsList /> },
+          { path: 'projects/:id', element: <ProjectDetailView /> },
+          { path: 'catalog', element: <CatalogList /> },
+          { path: 'assets', element: <AssetsView /> },
+          { path: 'quotes', element: <QuoteRequestsList /> },
+          { path: 'analytics', element: <AnalyticsView /> },
+          { path: 'settings', element: <SettingsView /> },
+        ],
+      },
     ],
   },
 ])

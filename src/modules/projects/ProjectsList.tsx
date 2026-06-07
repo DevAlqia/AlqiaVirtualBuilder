@@ -38,7 +38,7 @@ export function ProjectsList() {
     <div className="p-6 space-y-4 max-w-screen-xl mx-auto">
       <div className="flex items-center justify-between">
         <h1 className="text-white text-xl font-questrial font-semibold">Proyectos</h1>
-        <Button variant="primary" icon={<Plus className="w-4 h-4" />} onClick={() => navigate('/builder')}>
+        <Button variant="primary" icon={<Plus className="w-4 h-4" />} onClick={() => navigate('/app/builder')}>
           Nuevo proyecto
         </Button>
       </div>
@@ -90,7 +90,7 @@ export function ProjectsList() {
             <GlassPanel
               key={project.id}
               className="p-4 flex items-center gap-4 cursor-pointer hover:bg-white/[0.08] transition-all group"
-              onClick={() => navigate(`/projects/${project.id}`)}
+              onClick={() => navigate(`/app/projects/${project.id}`)}
             >
               <div className="w-10 h-10 rounded-lg bg-alqia-blue/40 border border-white/[0.06] flex items-center justify-center flex-shrink-0">
                 <Box className="w-4 h-4 text-white/40" />

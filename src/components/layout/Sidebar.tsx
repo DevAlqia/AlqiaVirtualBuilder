@@ -22,14 +22,14 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { path: '/', label: 'Workspace', icon: LayoutDashboard },
-  { path: '/builder', label: 'Constructor', icon: Box },
-  { path: '/projects', label: 'Proyectos', icon: FolderOpen },
-  { path: '/catalog', label: 'Catálogo', icon: Package },
-  { path: '/assets', label: 'Assets 3D', icon: Layers },
-  { path: '/quotes', label: 'Cotizaciones', icon: FileText },
-  { path: '/analytics', label: 'Analítica', icon: BarChart3 },
-  { path: '/settings', label: 'Configuración', icon: Settings },
+  { path: '/app', label: 'Workspace', icon: LayoutDashboard },
+  { path: '/app/builder', label: 'Constructor', icon: Box },
+  { path: '/app/projects', label: 'Proyectos', icon: FolderOpen },
+  { path: '/app/catalog', label: 'Catálogo', icon: Package },
+  { path: '/app/assets', label: 'Assets 3D', icon: Layers },
+  { path: '/app/quotes', label: 'Cotizaciones', icon: FileText },
+  { path: '/app/analytics', label: 'Analítica', icon: BarChart3 },
+  { path: '/app/settings', label: 'Configuración', icon: Settings },
 ]
 
 interface SidebarProps {

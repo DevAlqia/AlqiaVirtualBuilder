@@ -52,13 +52,13 @@ export function ProjectDetailView({ projectId, onBack }: ProjectDetailViewProps)
   const handleOpenInBuilder = () => {
     if (!project) return
     setCurrentProject(project)
-    navigate(`/builder?project=${project.id}`)
+    navigate(`/app/builder?project=${project.id}`)
   }
 
   const handleDelete = async () => {
     setConfirmDelete(false)
     qc.invalidateQueries({ queryKey: ['projects'] })
-    navigate('/projects')
+    navigate('/app/projects')
   }
 
   if (isLoading || !project) {
@@ -78,7 +78,7 @@ export function ProjectDetailView({ projectId, onBack }: ProjectDetailViewProps)
       {/* Header */}
       <div className="flex items-start gap-3">
         <button
-          onClick={onBack ?? (() => navigate('/projects'))}
+          onClick={onBack ?? (() => navigate('/app/projects'))}
           className="p-2 rounded-lg text-content-secondary hover:text-white hover:bg-white/[0.06] transition-all mt-0.5"
         >
           <ArrowLeft className="w-4 h-4" />
