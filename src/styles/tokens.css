@@ -1,0 +1,39 @@
+/* Alqia Virtual Builder — Design Tokens */
+:root {
+  /* Canales RGB — necesarios para que Tailwind opacity modifiers funcionen */
+  --surface-base:    17 25 35;       /* #111923 — bg-ultra */
+  --surface-raised:  24 33 45;       /* #18212D — bg-dark  */
+  --content-primary: 255 255 255;    /* texto principal     */
+  --content-secondary: 167 179 194;  /* #A7B3C2             */
+  --content-muted:     113 128 150;  /* #718096             */
+
+  /* Colores fijos — no cambian con el tema */
+  --color-alqia-blue:      #202d3d;
+  --color-alqia-orange:    #f98058;
+  --color-status-success:  #4ade80;
+  --color-status-warning:  #facc15;
+  --color-status-danger:   #fb7185;
+  --color-status-info:     #38bdf8;
+
+  /* Glass — dark (default) */
+  --glass-bg:            rgba(255, 255, 255, 0.08);
+  --glass-bg-active:     rgba(255, 255, 255, 0.14);
+  --glass-border:        rgba(255, 255, 255, 0.12);
+  --glass-border-active: rgba(255, 255, 255, 0.18);
+  --glass-blur:    12px;
+  --glass-blur-lg: 20px;
+}
+
+html.light {
+  --surface-base:    240 242 245;    /* #F0F2F5 */
+  --surface-raised:  255 255 255;    /* #FFFFFF */
+  --content-primary:   17  24  39;   /* #111827 */
+  --content-secondary: 74  85 104;   /* #4A5568 */
+  --content-muted:    107 114 128;   /* #6B7280 */
+
+  /* Glass — light */
+  --glass-bg:            rgba(0, 0, 0, 0.04);
+  --glass-bg-active:     rgba(0, 0, 0, 0.09);
+  --glass-border:        rgba(0, 0, 0, 0.08);
+  --glass-border-active: rgba(0, 0, 0, 0.14);
+}
